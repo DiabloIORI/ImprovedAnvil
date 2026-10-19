@@ -1,9 +1,9 @@
 EXTEND_BOTTOM ~UDDEMON~ 20
-  IF ~~ THEN REPLY @5300 GOTO 23
+  IF ~~ THEN REPLY @5300 GOTO 30
 END
 
 APPEND ~UDDEMON~
-  IF ~~ THEN BEGIN 23
+  IF ~~ THEN BEGIN 30
     SAY @5301
     IF ~~ THEN DO ~SetGlobal("Iafight","AR2201",1)
                    SetGlobal("DrowCityHostile","GLOBAL",0)

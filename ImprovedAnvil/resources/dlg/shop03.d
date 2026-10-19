@@ -1,20 +1,20 @@
 EXTEND_TOP ~SHOP03~ 0 #2
-  IF ~~ THEN REPLY @5100 GOTO 21
+  IF ~~ THEN REPLY @5100 GOTO 34
 END
 
 EXTEND_TOP ~SHOP03~ 8 #2
-  IF ~~ THEN REPLY @5102 GOTO 22
+  IF ~~ THEN REPLY @5102 GOTO 35
 END
 
 APPEND ~SHOP03~
-  IF ~~ THEN BEGIN 21
+  IF ~~ THEN BEGIN 34
     SAY @5101
-    IF ~~ THEN REPLY @5102 GOTO 22
+    IF ~~ THEN REPLY @5102 GOTO 35
   END
 
-  IF ~~ THEN BEGIN 22
+  IF ~~ THEN BEGIN 35
     SAY @5103
-    IF ~~ THEN REPLY @5104 GOTO 23
+    IF ~~ THEN REPLY @5104 GOTO 28
     IF ~PartyHasItem("s!misc61") Global("Iabrac02forged","GLOBAL",0)~ THEN REPLY @5106 GOTO misc61
     IF ~PartyHasItem("ohhcloak") Global("Iahexxat01forged","GLOBAL",0)~ THEN REPLY @5110 GOTO hexxat1
     IF ~PartyHasItem("s!clck08") Global("Iahexxat02orged","GLOBAL",0)~ THEN REPLY @5112 GOTO hexxat2
@@ -22,14 +22,14 @@ APPEND ~SHOP03~
     IF ~PartyHasItem("s!misc74") Global("Iahideforged","GLOBAL",0)~ THEN REPLY @5116 GOTO yetihide
   END
 
-  IF ~~ THEN BEGIN 23
+  IF ~~ THEN BEGIN 28
     SAY @5105
     COPY_TRANS SHOP03 8
   END
 
   IF ~~ THEN BEGIN misc61
     SAY @5107
-    IF ~~ THEN REPLY @5108 GOTO 22
+    IF ~~ THEN REPLY @5108 GOTO 35
     IF ~PartyHasItem("s!misc61") PartyHasItem("s!misc12") PartyGoldGT(9999) Global("Iabrac02forged","GLOBAL",0)~ THEN
       REPLY @5109
       DO ~SetGlobal("Iabrac02forged","GLOBAL",1)
@@ -43,7 +43,7 @@ APPEND ~SHOP03~
 
   IF ~~ THEN BEGIN hexxat1
     SAY @5111
-    IF ~~ THEN REPLY @5108 GOTO 22
+    IF ~~ THEN REPLY @5108 GOTO 35
     IF ~PartyHasItem("ohhcloak") PartyGoldGT(29999) PartyHasItem("clck01") PartyHasItem("s!clck10")~
       THEN REPLY @5109
       DO ~SetGlobal("Iahexxat01forged","GLOBAL",1)
@@ -58,7 +58,7 @@ APPEND ~SHOP03~
 
   IF ~~ THEN BEGIN hexxat2
     SAY @5113
-    IF ~~ THEN REPLY @5108 GOTO 22
+    IF ~~ THEN REPLY @5108 GOTO 35
     IF ~PartyHasItem("s!clck08") PartyGoldGT(59999) PartyHasItem("clck01") PartyHasItem("dwdust") PartyHasItem("s!misc06") ~
       THEN REPLY @5109
       DO ~SetGlobal("Iahexxat02forged","GLOBAL",1)
@@ -74,7 +74,7 @@ APPEND ~SHOP03~
 
   IF ~~ THEN BEGIN blood
     SAY @5115
-    IF ~~ THEN REPLY @5108 GOTO 22
+    IF ~~ THEN REPLY @5108 GOTO 35
     IF ~PartyHasItem("s!chan01") PartyGoldGT(59999) PartyHasItem("s!misc66") PartyHasItem("S!misc68") PartyHasItem("S!misc69") PartyHasItem("s!misc06")~
       THEN REPLY @5109
       DO ~SetGlobal("Iabloodforged","GLOBAL",1)
@@ -91,7 +91,7 @@ APPEND ~SHOP03~
 
   IF ~~ THEN BEGIN yetihide
     SAY @5117
-    IF ~~ THEN REPLY @5108 GOTO 22
+    IF ~~ THEN REPLY @5108 GOTO 35
 
     IF ~PartyHasItem("s!misc74") PartyGoldGT(9999) PartyHasItem("clck01")~
       THEN REPLY @5109
